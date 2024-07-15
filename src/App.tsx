@@ -1,3 +1,10 @@
+import { Route, Routes } from "react-router-dom"
+import LoginPage from "./pages/LoginPage"
+
 export default function App() {
-  return <div>App</div>
+  return (
+    <Routes>
+      <Route path="/login" element={<LoginPage />} />
+    </Routes>
+  )
 }
