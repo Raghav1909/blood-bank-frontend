@@ -15,6 +15,7 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import logo from "@/assets/logo.svg"
+import { BeatLoader } from "react-spinners"
 
 export function Login() {
   const emailRef = useRef<HTMLInputElement>(null)
@@ -101,13 +102,13 @@ export function Login() {
               />
             </div>
           </div>
-          <p ref={errRef} className="text-red-500">
+          <p ref={errRef} className="text-primary">
             {errMsg}
           </p>
         </CardContent>
         <CardFooter className="flex justify-center">
           <Button type="submit" disabled={isLoading}>
-            Login
+            {!isLoading ? <p>Login</p> : <BeatLoader className="" size={4} />}
           </Button>
         </CardFooter>
       </form>
